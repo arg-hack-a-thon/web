@@ -1,0 +1,43 @@
+@import '../../variables.less';
+
+.container {
+  background-color: @lightGrey;
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+
+}
+
+.item {
+  padding: 0 10px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.leftContainer,
+.rightContainer {
+  display: flex;
+  align-items: center;
+}
+
+.leftContainer {
+  button {
+    // display: none;
+    border: 0;
+    background-color: #B9E9FF;
+    padding: 7px 13px;
+    border-radius: 8px;
+    transition: all 0.8s ease 0s;
+    outline: none;
+
+    i {
+      color: white;
+    }
+
+    // @media (max-width:767px) {
+    //   display: inline-block;
+    // }
+  }
+}

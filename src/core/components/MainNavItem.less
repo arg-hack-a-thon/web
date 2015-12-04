@@ -1,0 +1,39 @@
+@import '../../variables.less';
+
+.itemWrapper {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: block;
+  padding: 15px;
+  color: white;
+  transition: border-left 0.25s;
+
+  :global .fa {
+    padding-right: 6px;
+  }
+
+  &.active {
+    border-left: 4px solid @brightBlue;
+    background-color: saturate(lighten(@darkBlue, 5%), 2%);
+    text-decoration: none;
+
+    &:hover, &:focus {
+      background-color: saturate(lighten(@darkBlue, 5%), 2%);
+    }
+
+    &:visited {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &:hover, &:focus {
+    background-color: darken(@darkBlue, 2%);
+    color: white;
+    text-decoration: none;
+  }
+}

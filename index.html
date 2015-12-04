@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>React Transform Boilerplate</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css' />
+    {% if env === "production" %}
+    <link rel="stylesheet" type="text/css" href="/static/styles.css?v={{ assets.styles }}" />
+    {% endif %}
+  </head>
+  <body>
+
+    <div id='root'></div>
+
+    {% if env === "production" %}
+    <script src="/static/bundle.js?v={{ assets.bundle }}"></script>
+    {% else %}
+    <script src="/static/bundle.js"></script>
+    {% endif %}
+  </body>
+</html>

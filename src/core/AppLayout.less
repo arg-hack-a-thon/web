@@ -1,0 +1,71 @@
+@import '../variables.less';
+
+/* Toggle Styles */
+
+.layoutWrapper {
+  padding-left: 0;
+  transition: all 0.5s ease;
+}
+
+.layoutWrapper.toggled {
+  padding-left: 250px;
+}
+
+.sidebarWrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: @darkBlue;
+  transition: all 0.5s ease;
+}
+
+.layoutWrapper.toggled .sidebarWrapper {
+  width: 250px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  width: 250px;
+}
+
+.pageContentWrapper {
+  width: 100%;
+  position: absolute;
+}
+
+.layoutWrapper.toggled .pageContentWrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+@media(min-width:768px) {
+  .layoutWrapper {
+    padding-left: 250px;
+  }
+
+  .layoutWrapper.toggled {
+    padding-left: 0;
+  }
+
+  .sidebarWrapper {
+    width: 250px;
+  }
+
+  .layoutWrapper.toggled .sidebarWrapper {
+    width: 0;
+  }
+
+  .pageContentWrapper {
+    position: relative;
+  }
+
+  .layoutWrapper.toggled .pageContentWrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
