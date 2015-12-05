@@ -130,7 +130,7 @@ export function redirectLoggedInUser() {
       );
     } else {
       return dispatch(
-        replaceState(null, '/dashboard')
+        replaceState(null, '/door-monitor')
       );
     }
   }
