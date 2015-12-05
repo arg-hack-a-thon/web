@@ -1,6 +1,6 @@
 export default [{
-  path: '/dashboard',
-  component: require('./Dashboard')
+  path: '/door-monitor',
+  component: require('./DoorMonitor')
   // getComponent(location, cb) {
   //   require.ensure([], (require) => {
   //     cb(null, require('./Dashboard'))
