@@ -39,7 +39,25 @@ export default {
         }
         return json;
       });
-  }
+  },
+
+  openDoor(token) {
+    const url = `${AppConfig.get('/api')}/door/open`
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': token
+        }
+      })
+      .then(res => res.json())
+      .then(json => {
+        if (json.error) {
+          throw new HTTPError(json.error, json.statusCode, json);
+        }
+        return json;
+      });
+  },
 
 
 }

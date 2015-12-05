@@ -12,7 +12,7 @@ export default class Player extends Component {
 
   componentDidMount() {
     if (socket && !this.onMsgListener) {
-      this.onMsgListener = socket.on('videoFrame', this.onMessageReceived);
+      this.onMsgListener = socket.on('image', this.onMessageReceived);
     }
   }
 
@@ -23,7 +23,7 @@ export default class Player extends Component {
   render() {
     return (
 	    <div className="embed-responsive embed-responsive-16by9">
-			  <img className="embed-responsive-item" src="data:image/gif;base64,{this.state.data}" />
+			  <img className="embed-responsive-item" src={this.state.data} />
 			</div>
   	)
   }
