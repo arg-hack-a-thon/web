@@ -24,7 +24,8 @@ const routes = {
     childRoutes: [{
       component: require('./core/AppLayout'),
       childRoutes: [
-        ...require('./dashboard')
+        ...require('./door-monitor'),
+        ...require('./users')
       ]
     }]
   }]
