@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import configureStore from './redux/create';
 import { ReduxRouter } from 'redux-router';
 import { Provider } from 'react-redux';
+import io from 'socket.io-client';
 
 require('font-awesome/css/font-awesome.css');
 require('bootstrap/dist/css/bootstrap.css');
@@ -10,6 +11,14 @@ require('./global.less');
 
 // Load our custom validators
 require('./lib/validators');
+
+// Init socket.io
+function initSocket() {
+  const socket = io("http://localhost:3000");
+  return socket;
+}
+
+global.socket = initSocket();
 
 const store = configureStore();
 
