@@ -13,6 +13,10 @@ export default class OpenDoorButton extends Component {
 	}
 
 	onOpenDoor = function(){
+    if (socket) {
+      socket.emit('openDoor', true);
+    }
+
 		this.setState( function( state ) {
 
       state.doorState = (state.doorState == 'closed') ? 'opened' : 'closed';
@@ -20,7 +24,6 @@ export default class OpenDoorButton extends Component {
       return { doorState: state.doorState };
 
     });
-		console.log('click')
 	}
 
   render() {

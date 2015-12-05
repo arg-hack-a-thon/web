@@ -14,7 +14,7 @@ require('./lib/validators');
 
 // Init socket.io
 function initSocket() {
-  const socket = io("http://localhost:3000");
+  const socket = io("http://docker.local:8011");
   return socket;
 }
 
